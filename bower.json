@@ -1,0 +1,11 @@
+{
+  "name": "wswebapp",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.2.19",
+    "bootstrap": "~3.2.0",
+    "angular-route": "~1.2.19",
+    "less.js": "~1.7.3",
+    "angular-mocks": "~1.2.20"
+  }
+}
