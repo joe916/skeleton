@@ -10,7 +10,7 @@ app.use(express.static(__dirname + '/app'));
 app.use('/', router);	//All routes will be prefixed with /api/v1
 
 //ReST API ROUTES
-router.get('/folders', function (req, res){
+router.get('/items', function (req, res){
 	//res.json(json);
 });
 
