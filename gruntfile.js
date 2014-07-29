@@ -1,11 +1,11 @@
 module.exports = function(grunt) {
- 
+
 // Project configuration
 grunt.initConfig({
 
-    // load metadata specified in package.json, such as version
+    // load metadata specified in package.json
     "pkg": grunt.file.readJSON('package.json'),
-    
+
     // clean
     "clean": {
       all: [
@@ -13,8 +13,8 @@ grunt.initConfig({
       "tests/reports"
       ]
     },
-    // convert .less to .css
     
+    // convert .less to .css
     "less": {
       all: {
         files: [{
@@ -26,16 +26,17 @@ grunt.initConfig({
         }]
       }
     },
+    // test runner
     karma: {
       options: {
         configFile: 'tests/karma.conf.js',
-        
+
         browsers: ['PhantomJS'],
         singleRun: true,
         logLevel: 'INFO'
       }
-    }
-    ,
+    },
+    // node server
     nodemon:{
       dev: {
         script: 'server.js',
@@ -46,7 +47,7 @@ grunt.initConfig({
         }
       }
     }
-    
+
   });
 
 // Load plugins
@@ -56,7 +57,7 @@ grunt.loadNpmTasks('grunt-nodemon');
 grunt.loadNpmTasks('grunt-karma');
 
 // Default task
-grunt.registerTask('default', ['less']);
+grunt.registerTask('default', ['less', 'nodemon']);
 grunt.registerTask('run', ['nodemon']);
 grunt.registerTask('test', ['karma']);
 };
